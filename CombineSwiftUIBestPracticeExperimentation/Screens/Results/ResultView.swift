@@ -29,24 +29,25 @@ struct ResultView : View {
         }
     }
     
-    private var resultContent: some View {
-        switch resultModel.result {
+    @ViewBuilder private var resultContent: some View {
+        switch (resultModel.preference, resultModel.result) {
         
-        case .loaded(let value):
-            return Text("Result: \(value)").asAnyView()
+        case (.some(let preference), .some(let result)):
+            Text("Result: \(preference) appears \(result) times")
             
         default:
-            return EmptyView().asAnyView()
+            EmptyView()
             
         }
     }
     
-    private var preferenceContent: some View {
+    @ViewBuilder private var preferenceContent: some View {
         switch resultModel.preference {
         
-        case .loaded(let value):
-            return VStack {
-                Text("Preference: \(value)").asAnyView()
+        case .some(let value):
+            VStack {
+                Text("Preference: \(value)")
+                
                 Button(action: resultModel.pressedChange) {
                     Text("Change")
                 }
@@ -54,10 +55,9 @@ struct ResultView : View {
                     ConfigurationContainerView()
                 }
             }
-            .asAnyView()
             
         default:
-            return EmptyView().asAnyView()
+            EmptyView()
             
         }
     }

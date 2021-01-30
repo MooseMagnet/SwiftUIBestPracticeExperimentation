@@ -6,10 +6,10 @@ import SwiftUI
 
 class ModelContainer<T> : ObservableObject {
     
-    @Published private(set) var model: Loadable<T> = .notLoaded
+    @Published private(set) var model: T? = nil
     
     func load(_ t: T) {
-        model = .loaded(t)
+        model = t
     }
 }
 
@@ -26,21 +26,18 @@ struct ViewContainer<Model, Content> : View where Content : View {
         self.modelInitializer = modelInitializer
     }
     
-    var body: some View {
+    @ViewBuilder var body: some View {
         switch modelContainer.model {
         
-        case .loaded(let model):
-            return content(model).asAnyView()
+        case .some(let model):
+            content(model)
         
         default:
             // In theory, this should appear for less than a fraction of an instant. :shrug:
-            return VStack {
-                EmptyView()
-            }
-            .onAppear {
-                modelContainer.load(modelInitializer())
-            }
-            .asAnyView()
+            Color.clear
+                .onAppear {
+                    modelContainer.load(modelInitializer())
+                }
         }
     }
 }

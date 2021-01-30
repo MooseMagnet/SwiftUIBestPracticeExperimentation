@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7C07B52B2591BA0200BD2318 /* ViewModelConsistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B52A2591BA0200BD2318 /* ViewModelConsistency.swift */; };
-		7C07B5312591BB9400BD2318 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5302591BB9400BD2318 /* Loadable.swift */; };
 		7C07B5362591BBC600BD2318 /* ConfigurationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5352591BBC600BD2318 /* ConfigurationStore.swift */; };
 		7C07B53A2591BBE300BD2318 /* ConfigurationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5392591BBE300BD2318 /* ConfigurationState.swift */; };
 		7C07B53E2591BC0400BD2318 /* InputStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B53D2591BC0400BD2318 /* InputStore.swift */; };
 		7C07B5432591BD8200BD2318 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5422591BD8200BD2318 /* Root.swift */; };
 		7C07B5462591BDF900BD2318 /* ResultViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5452591BDF900BD2318 /* ResultViewContainer.swift */; };
-		7C07B5492591BE3C00BD2318 /* EraseToAnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B5482591BE3C00BD2318 /* EraseToAnyView.swift */; };
 		7C07B54C2591BE4600BD2318 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07B54B2591BE4600BD2318 /* ResultModel.swift */; };
 		7C0F2EBC258F6F0C001BB184 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F2EBB258F6F0C001BB184 /* App.swift */; };
 		7C0F2EBE258F6F0C001BB184 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F2EBD258F6F0C001BB184 /* ResultView.swift */; };
@@ -28,13 +26,11 @@
 
 /* Begin PBXFileReference section */
 		7C07B52A2591BA0200BD2318 /* ViewModelConsistency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelConsistency.swift; sourceTree = "<group>"; };
-		7C07B5302591BB9400BD2318 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		7C07B5352591BBC600BD2318 /* ConfigurationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationStore.swift; sourceTree = "<group>"; };
 		7C07B5392591BBE300BD2318 /* ConfigurationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationState.swift; sourceTree = "<group>"; };
 		7C07B53D2591BC0400BD2318 /* InputStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStore.swift; sourceTree = "<group>"; };
 		7C07B5422591BD8200BD2318 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		7C07B5452591BDF900BD2318 /* ResultViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewContainer.swift; sourceTree = "<group>"; };
-		7C07B5482591BE3C00BD2318 /* EraseToAnyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraseToAnyView.swift; sourceTree = "<group>"; };
 		7C07B54B2591BE4600BD2318 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		7C0F2EB8258F6F0C001BB184 /* CombineSwiftUIBestPracticeExperimentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineSwiftUIBestPracticeExperimentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0F2EBB258F6F0C001BB184 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -157,9 +153,7 @@
 		7C35E4082591C2B3009CD646 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				7C07B5302591BB9400BD2318 /* Loadable.swift */,
 				7C07B52A2591BA0200BD2318 /* ViewModelConsistency.swift */,
-				7C07B5482591BE3C00BD2318 /* EraseToAnyView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -246,7 +240,6 @@
 				7C07B53A2591BBE300BD2318 /* ConfigurationState.swift in Sources */,
 				7C07B52B2591BA0200BD2318 /* ViewModelConsistency.swift in Sources */,
 				7C35E4062591C0AC009CD646 /* ConfigurationModel.swift in Sources */,
-				7C07B5492591BE3C00BD2318 /* EraseToAnyView.swift in Sources */,
 				7C0F2EBE258F6F0C001BB184 /* ResultView.swift in Sources */,
 				7C07B5432591BD8200BD2318 /* Root.swift in Sources */,
 				7C2FB073258F81AC0032BFFA /* ConfigurationView.swift in Sources */,
@@ -255,7 +248,6 @@
 				7C07B5462591BDF900BD2318 /* ResultViewContainer.swift in Sources */,
 				7C35E4032591C084009CD646 /* ConfigurationViewContainer.swift in Sources */,
 				7C0F2EBC258F6F0C001BB184 /* App.swift in Sources */,
-				7C07B5312591BB9400BD2318 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

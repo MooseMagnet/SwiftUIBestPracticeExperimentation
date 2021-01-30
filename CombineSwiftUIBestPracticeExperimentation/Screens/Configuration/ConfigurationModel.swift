@@ -12,16 +12,13 @@ class ConfigurationModel : ObservableObject {
     init(_ configurationStore: ConfigurationStore) {
         self.configurationStore = configurationStore
         
-        switch configurationStore.configuration {
-        
-        case .loaded(let loadedConfiguration):
-            preferenceAsText = "\(loadedConfiguration.preference)"
-            
-        default:
-            preferenceAsText = ""
-            
-        }
-        
+        preferenceAsText = {
+            if let p = configurationStore.configuration?.preference {
+                return "\(p)"
+            }
+            return ""
+        }()
+
         maintainIsValid()
     }
     

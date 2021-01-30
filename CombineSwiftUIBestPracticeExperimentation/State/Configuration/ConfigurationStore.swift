@@ -6,7 +6,7 @@ class ConfigurationStore : ObservableObject {
            
     let persistenceService: PersistenceService
     
-    @Published private(set) var configuration: Loadable<Configuration> = .notLoaded
+    @Published private(set) var configuration: Configuration? = nil
     
     private var subs: Set<AnyCancellable> = .init()
     
@@ -18,24 +18,19 @@ class ConfigurationStore : ObservableObject {
     
     private func saveConfigurationOnChange() {
         $configuration
-            .sink { loadableConfiguration in
-                switch loadableConfiguration {
-                
-                case .loaded(let configuration):
-                    self.persistenceService.save(configuration)
-                
-                default: return
-                
+            .sink { [weak self] c in
+                if let c = c {
+                    self?.persistenceService.save(c)
                 }
             }
             .store(in: &subs)
     }
     
     func load() {
-        configuration = .loaded(self.persistenceService.load() ?? .init(preference: 5))
+        configuration = self.persistenceService.load() ?? .init(preference: 5)
     }
     
     func update(_ new: Configuration) {
-        configuration = .loaded(new)
+        configuration = new
     }
 }
