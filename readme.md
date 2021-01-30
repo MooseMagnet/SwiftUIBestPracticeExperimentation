@@ -45,7 +45,7 @@ struct ConfigurationView : View {
 }
 ```
 
-Because `ConfigurationModel` depends on `ConfigurationStore`, it should be injected as an initializer argument. However, `@StateObject`s require inline initialization\*, and properties injected via `@EnvironmentObject` are not available at that scope.
+Because `ConfigurationModel` depends on `ConfigurationStore`, it should be injected as an initializer argument. However, `@StateObject`s require inline initialization, and properties injected via `@EnvironmentObject` are not available at that scope.
 
 The workaround would typically be to latently assign the `ConfigurationStore` to the view model, perhaps inside an `.onAppear { ... }` modifier on the view. This not only requires the property to be publicly mutable, but also has implications on internal state management within the view model itself, which then has implications on the view.
 
